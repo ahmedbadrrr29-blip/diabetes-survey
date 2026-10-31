@@ -2284,7 +2284,7 @@
 
         const result = await response.json();
 
-        if (response.ok) {
+        if (response.ok && result.success !== "false" && result.success !== false) {
           localStorage.removeItem(STORAGE_KEY);
           document.getElementById("diabetesSurveyForm").style.display = "none";
           document.getElementById("stepsNav").style.display = "none";
